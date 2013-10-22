@@ -26,6 +26,33 @@ class AppleMessage implements MessageInterface
     protected $apsBody = array();
 
     /**
+     * Expiry of message in seconds
+     *
+     * @var int
+     */
+    protected $expiry = 0;
+
+    /**
+     * Set expiry of message
+     *
+     * @param int $expiry
+     */
+    public function setExpiry($expiry)
+    {
+        $this->expiry = $expiry;
+    }
+
+    /**
+     * Get expiry of message
+     *
+     * @return int
+     */
+    public function getExpiry()
+    {
+        return $this->expiry;
+    }
+
+    /**
      * Class constructor
      */
     public function __construct($identifier = NULL)
