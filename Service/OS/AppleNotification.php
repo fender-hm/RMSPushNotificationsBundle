@@ -282,7 +282,7 @@ class AppleNotification implements OSNotificationServiceInterface
         }
 
         $token = preg_replace("/[^0-9A-Fa-f]/", "", $token);
-        $payload = chr(1) . pack("N", $messageId) . pack("N", time() + $expiry) . pack("n", 32) . pack("H*", $token) . pack("n", strlen($jsonBody)) . $jsonBody;
+        $payload = chr(1) . pack("N", $messageId) . pack("N", $expiry) . pack("n", 32) . pack("H*", $token) . pack("n", strlen($jsonBody)) . $jsonBody;
 
         return $payload;
     }

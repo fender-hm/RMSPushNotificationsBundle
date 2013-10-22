@@ -39,7 +39,7 @@ class AppleMessage implements MessageInterface
      */
     public function setExpiry($expiry)
     {
-        $this->expiry = $expiry;
+        $this->expiry = time() + $expiry;
     }
 
     /**
